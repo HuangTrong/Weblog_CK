@@ -1,0 +1,791 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm Số Hay Chính Mình? — GenZ Insight</title>
+    <meta name="description" content="Tìm hiểu stress học đường qua số liệu thực tế, biểu hiện, bài kiểm tra nhanh và trải nghiệm tương tác — giúp bạn nhận diện áp lực học tập và quan tâm bản thân đúng cách.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="nav-progress" id="progressBar"></div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-label="Giới thiệu" onclick="scrollToSection('intro')"></div>
+        <div class="nav-dot" data-label="Số liệu" onclick="scrollToSection('stats')"></div>
+        <div class="nav-dot" data-label="Định nghĩa" onclick="scrollToSection('definition')"></div>
+        <div class="nav-dot" data-label="Biểu hiện" onclick="scrollToSection('symptoms')"></div>
+        <div class="nav-dot" data-label="Trải nghiệm" onclick="scrollToSection('interactive-story')"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Page Turn Overlay -->
+    <div class="page-overlay" id="pageOverlay"></div>
+
+    <!-- INTRO SECTION -->
+    <section id="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-icon">🎓</div>
+                <h1 class="intro-title glow">STRESS TRONG HỌC ĐƯỜNG</h1>
+                <p class="intro-subtitle">
+                    Một cuộc khủng hoảng đang diễn ra trong thầm lặng...<br>
+                    Ảnh hưởng đến hàng triệu học sinh, sinh viên mỗi ngày.                
+                </p>
+                <div class="typing-text" id="typingText"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('stats')">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ============ STATS SECTION ============ -->
+    <section id="stats">
+        <div class="container">
+            <h2 class="section-title">📊 Số Liệu Đáng Báo Động</h2>
+
+            <div class="stats-grid">
+                <!-- Row 1 -->
+                <div class="stat-card amber" data-delay="0">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="70" data-decimals="0">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">thanh thiếu niên Mỹ (13–17 tuổi) xác định lo âu/trầm cảm là vấn đề lớn trong bạn bè họ</div>
+                    <div class="stat-source">APA 2024 (stress.org)</div>
+                </div>
+
+                <div class="stat-card red" data-delay="80">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="75" data-decimals="0">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">học sinh THPT báo cáo cảm xúc tiêu cực (sợ hãi, căng thẳng, buồn bã) tại trường học</div>
+                    <div class="stat-source">Worldometrics 2024 (stress.org)</div>
+                </div>
+
+                <div class="stat-card amber" data-delay="160">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="5.8" data-decimals="1">0</span>
+                        <span class="stat-suffix">/10</span>
+                    </div>
+                    <div class="stat-label">mức stress trung bình của thanh thiếu niên Mỹ (người lớn: 3.8/10)</div>
+                    <div class="stat-source">APA (stress.org)</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="stat-card cyan" data-delay="240">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="87" data-decimals="0">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">sinh viên đại học coi học tập là nguồn gây stress chính</div>
+                    <div class="stat-source">APA 2020, Barbayannis et al. 2022</div>
+                </div>
+
+                <div class="stat-card red" data-delay="320">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="88.3" data-decimals="1">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">học sinh lớp 9–12 tại Manipur (Ấn Độ) có mức stress học đường cao</div>
+                    <div class="stat-source">Singh et al. 2025 (BMC Public Health)</div>
+                </div>
+
+                <div class="stat-card amber" data-delay="400">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="41.7" data-decimals="1">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">học sinh cùng nhóm trên có triệu chứng trầm cảm lớn</div>
+                    <div class="stat-source">Singh et al. 2025</div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="stat-card red" data-delay="480">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="43.9" data-decimals="1">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">học sinh có xuất hiện ý nghĩ tự làm hại bản thân (suicidal ideation)</div>
+                    <div class="stat-source">Singh et al. 2025</div>
+                </div>
+
+                <div class="stat-card cyan" data-delay="560">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="56.1" data-decimals="1">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">học sinh trung học tại Nepal nhận thức mình có stress học đường</div>
+                    <div class="stat-source">Hu et al. 2025 (BMC Public Health)</div>
+                </div>
+
+                <div class="stat-card lime" data-delay="640">
+                    <div class="stat-number-row">
+                        <span class="stat-number" data-target="53" data-decimals="0">0</span>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">mức tương quan giữa stress học đường và suy giảm sức khỏe tâm thần (r = 0.53)</div>
+                    <div class="stat-source">Barbayannis et al. 2022 (PMC9169886)</div>
+                </div>
+            </div>
+
+            <!-- Warning Note -->
+            <div class="stats-note" id="statsNote">
+                <p>
+                    <span class="note-label">⚠ Lưu ý:</span> Học sinh có stress học đường cao có nguy cơ ngủ kém chất lượng cao gấp&nbsp;
+                    <strong>2.09 lần</strong> so với nhóm không có stress — Hu et al. 2025 · Học sinh trầm cảm nặng có nguy cơ học kém cao hơn đáng kể — Kendakji et al. 2026
+                </p>
+            </div>
+
+            <!-- Comparison -->
+            <div class="comparison-section">
+                <h3 class="comparison-title">⚖️ So Sánh Mức Độ Stress</h3>
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>🧑‍🎓 Thanh thiếu niên (Teens)</span>
+                        <span class="bar-value">5.8/10</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill teens" data-width="58"></div>
+                    </div>
+                </div>
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>🧑‍💼 Người lớn (Adults)</span>
+                        <span class="bar-value">3.8/10</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill adults" data-width="38"></div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: var(--primary-orange); font-size: 0.95rem;">
+                    ⚡ Học sinh đánh giá stress của họ CAO HƠN 52% so với người lớn
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEFINITION SECTION -->
+    <section id="definition">
+        <div class="container">
+            <h2 class="section-title">📖 Stress Học Đường Là Gì & Vì Sao Cần Quan Tâm?</h2>
+
+            <div class="definition-card">
+                <div class="definition-main">
+                    <strong>Stress học đường</strong> là phản ứng tâm lý - sinh lý của cơ thể trước những áp lực 
+                    từ môi trường giáo dục, khi mà yêu cầu học tập vượt quá khả năng đối phó của học sinh/sinh viên, 
+                    dẫn đến những ảnh hưởng tiêu cực về thể chất, tinh thần và hành vi.
+                </div>
+
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--primary-orange);">
+                    🔍 Nguyên Nhân Chính
+                </h3>
+
+                <div class="causes-grid">
+                    <div class="cause-item">
+                        <div class="cause-icon">📝</div>
+                        <div class="cause-text">Áp lực điểm số, thi cử</div>
+                    </div>
+                    <div class="cause-item">
+                        <div class="cause-icon">📚</div>
+                        <div class="cause-text">Khối lượng bài tập quá tải</div>
+                    </div>
+                    <div class="cause-item">
+                        <div class="cause-icon">👥</div>
+                        <div class="cause-text">Cạnh tranh với bạn bè</div>
+                    </div>
+                    <div class="cause-item">
+                        <div class="cause-icon">🎯</div>
+                        <div class="cause-text">Kỳ vọng từ gia đình</div>
+                    </div>
+                    <div class="cause-item">
+                        <div class="cause-icon">⏰</div>
+                        <div class="cause-text">Quản lý thời gian kém</div>
+                    </div>
+                    <div class="cause-item">
+                        <div class="cause-icon">😰</div>
+                        <div class="cause-text">Sợ thất bại</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eustress vs Distress -->
+            <div class="stress-comparison">
+                <div class="stress-type positive">
+                    <h3>⚡ EUSTRESS - Stress Tích Cực</h3>
+                    <ul>
+                        <li>Tăng động lực học tập</li>
+                        <li>Cải thiện sự tập trung</li>
+                        <li>Nâng cao hiệu suất</li>
+                        <li>Phát triển kỹ năng</li>
+                        <li>Cảm giác thách thức</li>
+                    </ul>
+                </div>
+                <div class="stress-type negative">
+                    <h3>🚨 DISTRESS - Stress Tiêu Cực</h3>
+                    <ul>
+                        <li>Kiệt sức, burnout</li>
+                        <li>Suy giảm hiệu suất</li>
+                        <li>Ảnh hưởng sức khỏe</li>
+                        <li>Rối loạn cảm xúc</li>
+                        <li>Cảm giác bất lực</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYMPTOMS SECTION -->
+    <section id="symptoms">
+        <div class="container">
+            <h2 class="section-title">🔍 Nhận Diện Các Biểu Hiện Của Stress Học Đường</h2>
+
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('physical', this)">💪 Thể Chất</button>
+                    <button class="tab-btn" onclick="switchTab('emotional', this)">❤️ Cảm Xúc</button>
+                    <button class="tab-btn" onclick="switchTab('cognitive', this)">🧠 Nhận Thức</button>
+                    <button class="tab-btn" onclick="switchTab('behavioral', this)">👣 Hành Vi</button>
+                </div>
+
+                <!-- Physical Tab -->
+                <div class="tab-content active" id="tab-physical">
+                    <div class="symptom-list">
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😴</div>
+                            <div>
+                                <div class="symptom-text">Rối loạn giấc ngủ, mất ngủ, ngủ không sâu</div>
+                                <div class="symptom-stat">77% học sinh thiếu ngủ</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🍽️</div>
+                            <div>
+                                <div class="symptom-text">Thay đổi thói quen ăn uống, bỏ bữa</div>
+                                <div class="symptom-stat">23% bỏ bữa vì stress</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🤕</div>
+                            <div>
+                                <div class="symptom-text">Đau đầu, đau bụng, đau cơ</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😮‍</div>
+                            <div>
+                                <div class="symptom-text">Mệt mỏi triền miên, thiếu năng lượng</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">💓</div>
+                            <div>
+                                <div class="symptom-text">Tim đập nhanh, hồi hộp</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🤒</div>
+                            <div>
+                                <div class="symptom-text">Suy giảm hệ miễn dịch, dễ ốm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emotional Tab -->
+                <div class="tab-content" id="tab-emotional">
+                    <div class="symptom-list">
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😢</div>
+                            <div>
+                                <div class="symptom-text">Buồn bã, tuyệt vọng kéo dài</div>
+                                <div class="symptom-stat">40% cảm thấy tuyệt vọng</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😰</div>
+                            <div>
+                                <div class="symptom-text">Lo âu, bồn chồn, bất an</div>
+                                <div class="symptom-stat">32% có lo âu vừa-nặng</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😡</div>
+                            <div>
+                                <div class="symptom-text">Dễ cáu gắt, bực bội vô cớ</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😔</div>
+                            <div>
+                                <div class="symptom-text">Trầm cảm, mất hứng thú</div>
+                                <div class="symptom-stat">30-37% trầm cảm</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😑</div>
+                            <div>
+                                <div class="symptom-text">Cảm giác trống rỗng, vô nghĩa</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😞</div>
+                            <div>
+                                <div class="symptom-text">Tự ti, mặc cảm, tự trách bản thân</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cognitive Tab -->
+                <div class="tab-content" id="tab-cognitive">
+                    <div class="symptom-list">
+                        <div class="symptom-item">
+                            <div class="symptom-icon">📉</div>
+                            <div>
+                                <div class="symptom-text">Giảm khả năng tập trung chú ý</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">💭</div>
+                            <div>
+                                <div class="symptom-text">Suy nghĩ tiêu cực, bi quan</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🤔</div>
+                            <div>
+                                <div class="symptom-text">Khó ra quyết định, do dự</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">📚</div>
+                            <div>
+                                <div class="symptom-text">Sụt giảm thành tích học tập</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🌀</div>
+                            <div>
+                                <div class="symptom-text">Hay quên, trí nhớ kém</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🔄</div>
+                            <div>
+                                <div class="symptom-text">Suy nghĩ lặp đi lặp lại, vòng xoáy lo lắng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral Tab -->
+                <div class="tab-content" id="tab-behavioral">
+                    <div class="symptom-list">
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🏃</div>
+                            <div>
+                                <div class="symptom-text">Trốn tránh, trì hoãn học tập</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">📱</div>
+                            <div>
+                                <div class="symptom-text">Nghiện mạng xã hội, game</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🍺</div>
+                            <div>
+                                <div class="symptom-text">Lạm dụng chất kích thích</div>
+                                <div class="symptom-stat">26% dùng rượu/chất kích thích</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">😶</div>
+                            <div>
+                                <div class="symptom-text">Thu mình, cô lập xã hội</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">⏰</div>
+                            <div>
+                                <div class="symptom-text">Trễ giờ, vắng học thường xuyên</div>
+                            </div>
+                        </div>
+                        <div class="symptom-item">
+                            <div class="symptom-icon">🍔</div>
+                            <div>
+                                <div class="symptom-text">Ăn uống vô độ hoặc bỏ ăn</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warning Section -->
+            <div class="warning-section">
+                <h3 class="warning-title">🚨 Dấu Hiệu Cảnh Báo Nguy Hiểm</h3>
+                <div class="warning-stats">
+                    <div class="warning-stat">
+                        <div class="number">11%</div>
+                        <div class="label">Có ý nghĩ tự tử</div>
+                    </div>
+                    <div class="warning-stat">
+                        <div class="number">30%</div>
+                        <div class="label">Cảm thấy trầm cảm</div>
+                    </div>
+                    <div class="warning-stat">
+                        <div class="number">26%</div>
+                        <div class="label">Dùng chất kích thích</div>
+                    </div>
+                    <div class="warning-stat">
+                        <div class="number">34%</div>
+                        <div class="label">Dự đoán stress sẽ tăng</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3 style="text-align: center; margin-bottom: 25px; color: var(--primary-orange);">
+                    📝 Bài Kiểm Tra Nhanh: Bạn Có Đang Stress?
+                </h3>
+
+                <div class="quiz-progress" id="quizProgress">
+                    <div class="quiz-dot active"></div>
+                    <div class="quiz-dot"></div>
+                    <div class="quiz-dot"></div>
+                    <div class="quiz-dot"></div>
+                    <div class="quiz-dot"></div>
+                </div>
+
+                <div id="quizContainer">
+                    <div class="quiz-question active" data-question="0">
+                        <h4>Câu 1: Bạn có thường xuyên cảm thấy mệt mỏi dù đã ngủ đủ?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0" onclick="selectAnswer(this)">Không bao giờ</button>
+                            <button class="quiz-option" data-score="1" onclick="selectAnswer(this)">Thỉnh thoảng</button>
+                            <button class="quiz-option" data-score="2" onclick="selectAnswer(this)">Thường xuyên</button>
+                            <button class="quiz-option" data-score="3" onclick="selectAnswer(this)">Luôn luôn</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" data-question="1">
+                        <h4>Câu 2: Bạn có gặp khó khăn khi tập trung học tập?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0" onclick="selectAnswer(this)">Không, vẫn tập trung tốt</button>
+                            <button class="quiz-option" data-score="1" onclick="selectAnswer(this)">Đôi khi khó tập trung</button>
+                            <button class="quiz-option" data-score="2" onclick="selectAnswer(this)">Thường xuyên mất tập trung</button>
+                            <button class="quiz-option" data-score="3" onclick="selectAnswer(this)">Hoàn toàn không thể tập trung</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" data-question="2">
+                        <h4>Câu 3: Bạn cảm thấy thế nào về việc đến trường/đi học?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0" onclick="selectAnswer(this)">Vui vẻ, bình thường</button>
+                            <button class="quiz-option" data-score="1" onclick="selectAnswer(this)">Hơi lo lắng</button>
+                            <button class="quiz-option" data-score="2" onclick="selectAnswer(this)">Rất lo lắng, muốn trốn</button>
+                            <button class="quiz-option" data-score="3" onclick="selectAnswer(this)">Sợ hãi, hoảng loạn</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" data-question="3">
+                        <h4>Câu 4: Giấc ngủ của bạn như thế nào?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0" onclick="selectAnswer(this)">Ngủ ngon, đủ giấc</button>
+                            <button class="quiz-option" data-score="1" onclick="selectAnswer(this)">Khó ngủ đôi lúc</button>
+                            <button class="quiz-option" data-score="2" onclick="selectAnswer(this)">Thường xuyên mất ngủ</button>
+                            <button class="quiz-option" data-score="3" onclick="selectAnswer(this)">Mất ngủ nghiêm trọng</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" data-question="4">
+                        <h4>Câu 5: Bạn có cảm thấy buồn bã hoặc tuyệt vọng không?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0" onclick="selectAnswer(this)">Không, tôi ổn</button>
+                            <button class="quiz-option" data-score="1" onclick="selectAnswer(this)">Thỉnh thoảng buồn</button>
+                            <button class="quiz-option" data-score="2" onclick="selectAnswer(this)">Thường xuyên buồn bã</button>
+                            <button class="quiz-option" data-score="3" onclick="selectAnswer(this)">Luôn cảm thấy tuyệt vọng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-result" id="quizResult">
+                    <div class="result-score" id="resultScore"></div>
+                    <div class="result-level" id="resultLevel"></div>
+                    <div class="result-advice" id="resultAdvice"></div>
+                    <button type="button" class="quiz-retry-btn" onclick="resetQuiz()" aria-label="Làm lại bài kiểm tra stress từ đầu">
+                        <span class="quiz-retry-icon" aria-hidden="true">🔄</span>
+                        <span class="quiz-retry-text">
+                            <span class="quiz-retry-label">Làm lại bài kiểm tra</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ INTERACTIVE STORY SECTION (FT Style) ============ -->
+    <section id="interactive-story">
+        <div class="story-wrapper">
+            <div class="story-header" id="storyHeader">
+                <div class="story-eyebrow">✦ TRẢI NGHIỆM TƯƠNG TÁC</div>
+                <h2 class="story-title">Giữa Áp Lực Học Tập,<br>Liệu Bạn Đã Quan Tâm Bản Thân Đúng Cách Hay Chưa?</h2>
+                <p class="story-subtitle">
+                    Bạn sẽ làm gì nếu là "Minh" — một học sinh lớp 11 đang "tê liệt" vì deadline và áp lực học đường?. 
+                    Mỗi lựa chọn phản ánh cách bạn đối diện với áp lực và chăm sóc bản thân.
+                </p>
+            </div>
+
+            <div class="story-intro-text" id="storyIntroText">
+                <strong>📖 Câu chuyện bắt đầu...</strong><br>
+                Bạn sẽ trải qua <strong>5 tình huống</strong> trong một tuần đầy áp lực của Minh. 
+                Hãy đưa ra lựa chọn mà bạn nghĩ mình sẽ làm. Cuối cùng, bạn sẽ biết mức độ "self-care" của mình như thế nào.
+            </div>
+
+            <!-- START BUTTON -->
+            <div style="text-align: center; margin-top: 30px;" id="startButtonContainer">
+                <button class="start-story-btn" onclick="startStory()">
+                    <span class="play-icon">▶️</span>
+                    <span>Bắt đầu trải nghiệm</span>
+                </button>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="story-progress" id="storyProgress">
+                <div class="progress-step active"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+            </div>
+
+            <!-- Scene Container -->
+            <div id="sceneContainer">
+                <!-- Scene 1 -->
+                <div class="story-scene" data-scene="0">
+                    <div class="scene-header">
+                        <div class="scene-number">1</div>
+                        <div class="scene-meta">
+                            <div class="scene-time">⏰ 11:30 đêm - Thứ Hai</div>
+                            <div class="scene-location">📍 Tại bàn học trong phòng của Minh</div>
+                        </div>
+                    </div>
+                    <div class="scene-narrative">
+                        Minh đã ngồi trước đống bài tập <span class="highlight">4 tiếng liên tục</span>. 
+                        Mắt mỏi rượi, lưng đau nhức. Đồng hồ đã điểm 11:30 đêm nhưng vẫn còn 2 bài toán khó chưa làm xong. 
+                        Ngày mai có bài kiểm tra 15 phút vào tiết 2.
+                        <span class="thought">💭 "Nếu không làm xong, mai mình sẽ bị điểm kém. Nhưng mình mệt quá rồi..."</span>
+                    </div>
+                    <div class="scene-question">🤔 Minh nên làm gì?</div>
+                    <div class="scene-choices">
+                        <button class="choice-btn" onclick="makeChoice(0, 0, 'bad')">
+                            <span class="choice-icon">☕</span>
+                            <span>Pha một ly cà phê, cố thức thêm 2 tiếng nữa để làm cho xong</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(0, 1, 'good')">
+                            <span class="choice-icon">😴</span>
+                            <span>Dừng lại, đi ngủ. Sáng dậy sớm 1 tiếng để ôn lại</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(0, 2, 'neutral')">
+                            <span class="choice-icon">📱</span>
+                            <span>Lướt TikTok "5 phút cho tỉnh táo" rồi tính tiếp</span>
+                        </button>
+                    </div>
+                    <div class="scene-outcome" id="outcome-0"></div>
+                    <button class="next-btn" id="next-0" onclick="nextScene()">Tiếp tục →</button>
+                </div>
+
+                <!-- Scene 2 -->
+                <div class="story-scene" data-scene="1">
+                    <div class="scene-header">
+                        <div class="scene-number">2</div>
+                        <div class="scene-meta">
+                            <div class="scene-time">⏰ 7:00 sáng - Thứ Ba</div>
+                            <div class="scene-location">📍 Căn tin trường</div>
+                        </div>
+                    </div>
+                    <div class="scene-narrative">
+                        Minh đến trường với đôi mắt thâm quầng. Trong giờ ra chơi, 
+                        Lan - bạn thân của Minh - hỏi: <span class="highlight">"Dạo này cậu sao thế? Trông mệt mỏi quá!"</span>
+                        <br><br>
+                        Minh biết Lan là người luôn sẵn sàng lắng nghe. Nhưng Minh cũng ngại khi phải 
+                        nói ra những suy nghĩ tiêu cực của mình.
+                        <span class="thought">💭 "Nói ra thì có ích gì? Ai cũng có áp lực riêng mà. Mình không muốn làm phiền ai cả."</span>
+                    </div>
+                    <div class="scene-question">🤔 Minh sẽ phản hồi thế nào?</div>
+                    <div class="scene-choices">
+                        <button class="choice-btn" onclick="makeChoice(1, 0, 'neutral')">
+                            <span class="choice-icon">🙂</span>
+                            <span>"Mình ổn, chỉ hơi mệt thôi" - cười gượng rồi lảng sang chuyện khác</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(1, 1, 'good')">
+                            <span class="choice-icon">💬</span>
+                            <span>Thú thật: "Thực ra dạo này mình stress lắm. Có thể nói chuyện với cậu không?"</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(1, 2, 'bad')">
+                            <span class="choice-icon">😤</span>
+                            <span>"Đừng hỏi nữa, để yên cho mình!" - cáu gắt bỏ đi</span>
+                        </button>
+                    </div>
+                    <div class="scene-outcome" id="outcome-1"></div>
+                    <button class="next-btn" id="next-1" onclick="nextScene()">Tiếp tục →</button>
+                </div>
+
+                <!-- Scene 3 -->
+                <div class="story-scene" data-scene="2">
+                    <div class="scene-header">
+                        <div class="scene-number">3</div>
+                        <div class="scene-meta">
+                            <div class="scene-time">⏰ 5:30 chiều - Thứ Tư</div>
+                            <div class="scene-location">📍 Trên đường đi học thêm về</div>
+                        </div>
+                    </div>
+                    <div class="scene-narrative">
+                        Minh vừa học xong 3 tiếng học thêm. Trên đường về, 
+                        Minh đi ngang qua <span class="highlight">công viên nhỏ</span> nơi có vài bạn đang chơi cầu lông. 
+                        Trời đang đẹp, gió mát rượi.
+                        <br><br>
+                        Điện thoại báo còn 1 bài luận phải nộp vào sáng mai. 
+                        Minh cảm thấy tội lỗi nếu dừng lại.
+                        <span class="thought">💭 "Mình không có thời gian để thư giãn. Còn bao nhiêu việc phải làm..."</span>
+                    </div>
+                    <div class="scene-question">🤔 Minh sẽ làm gì?</div>
+                    <div class="scene-choices">
+                        <button class="choice-btn" onclick="makeChoice(2, 0, 'good')">
+                            <span class="choice-icon">🏸</span>
+                            <span>Dành 30 phút chơi cầu lông với các bạn. Về nhà làm bài sau</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(2, 1, 'bad')">
+                            <span class="choice-icon">🏠</span>
+                            <span>Về nhà ngay, cắm đầu vào làm bài luận cho đến khi xong</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(2, 2, 'neutral')">
+                            <span class="choice-icon">🎧</span>
+                            <span>Đeo tai nghe nghe nhạc, vừa đi bộ vừa lướt mạng xã hội</span>
+                        </button>
+                    </div>
+                    <div class="scene-outcome" id="outcome-2"></div>
+                    <button class="next-btn" id="next-2" onclick="nextScene()">Tiếp tục →</button>
+                </div>
+
+                <!-- Scene 4 -->
+                <div class="story-scene" data-scene="3">
+                    <div class="scene-header">
+                        <div class="scene-number">4</div>
+                        <div class="scene-meta">
+                            <div class="scene-time">⏰ 8:00 tối - Thứ Năm</div>
+                            <div class="scene-location">📍 Bữa cơm gia đình</div>
+                        </div>
+                    </div>
+                    <div class="scene-narrative">
+                        Trong bữa cơm, mẹ Minh hỏi: <span class="highlight">"Dạo này học hành thế nào con? 
+                        Có thi được vào trường top không?"</span>
+                        <br><br>
+                        Minh cảm thấy ngực nặng trĩu. Minh biết bố mẹ kỳ vọng nhiều, 
+                        nhưng Minh đang kiệt sức. Minh muốn nói cho bố mẹ hiểu, 
+                        nhưng lại sợ họ thất vọng.
+                        <span class="thought">💭 "Nói ra sợ bố mẹ buồn. Nhưng cứ im lặng thế này, mình chịu không nổi..."</span>
+                    </div>
+                    <div class="scene-question">🤔 Minh sẽ làm gì?</div>
+                    <div class="scene-choices">
+                        <button class="choice-btn" onclick="makeChoice(3, 0, 'good')">
+                            <span class="choice-icon">💝</span>
+                            <span>Chia sẻ thật lòng: "Mẹ ơi, con đang rất áp lực. Con cần bố mẹ hiểu..."</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(3, 1, 'neutral')">
+                            <span class="choice-icon">🤐</span>
+                            <span>Im lặng, ậm ự cho qua bữa cơm rồi về phòng</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(3, 2, 'bad')">
+                            <span class="choice-icon">😠</span>
+                            <span>Bỏ đũa đứng dậy: "Mẹ chỉ biết hỏi điểm thôi!" rồi chạy vào phòng</span>
+                        </button>
+                    </div>
+                    <div class="scene-outcome" id="outcome-3"></div>
+                    <button class="next-btn" id="next-3" onclick="nextScene()">Tiếp tục →</button>
+                </div>
+
+                <!-- Scene 5 -->
+                <div class="story-scene" data-scene="4">
+                    <div class="scene-header">
+                        <div class="scene-number">5</div>
+                        <div class="scene-meta">
+                            <div class="scene-time">⏰ 10:00 tối - Thứ Bảy</div>
+                            <div class="scene-location">📍 Trong phòng, cuối tuần</div>
+                        </div>
+                    </div>
+                    <div class="scene-narrative">
+                        Cuối tuần rồi nhưng Minh vẫn còn nguyên đống bài tập chưa làm. 
+                        Minh mở laptop, nhìn vào màn hình trống, <span class="highlight">cảm thấy tê liệt hoàn toàn</span>.
+                        <br><br>
+                        Minh nhận ra mình đã không làm gì cho bản thân suốt cả tuần: 
+                        không tập thể dục, không gặp bạn bè, không làm điều gì mình thích.
+                        Chỉ học, học, và học.
+                        <span class="thought">💭 "Mình đang sống hay chỉ đang tồn tại? Tại sao mình thấy trống rỗng thế này?"</span>
+                    </div>
+                    <div class="scene-question">🤔 Minh quyết định cuối tuần sẽ...</div>
+                    <div class="scene-choices">
+                        <button class="choice-btn" onclick="makeChoice(4, 0, 'bad')">
+                            <span class="choice-icon">📚</span>
+                            <span>Ép bản thân ngồi vào bàn, làm liên tục 8 tiếng không nghỉ</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(4, 1, 'good')">
+                            <span class="choice-icon">🌿</span>
+                            <span>Dành buổi sáng làm điều mình thích (vẽ tranh, nghe nhạc), chiều mới học</span>
+                        </button>
+                        <button class="choice-btn" onclick="makeChoice(4, 2, 'neutral')">
+                            <span class="choice-icon">🛌</span>
+                            <span>Nằm dài xem phim cả ngày, để mai tính sau</span>
+                        </button>
+                    </div>
+                    <div class="scene-outcome" id="outcome-4"></div>
+                    <button class="next-btn" id="next-4" onclick="nextScene()">Xem kết quả →</button>
+                </div>
+            </div>
+
+            <!-- Final Result -->
+            <div class="story-final" id="storyFinal">
+                <div class="final-icon" id="finalIcon">🌟</div>
+                <h3 class="final-title" id="finalTitle">Kết quả của bạn</h3>
+                <div class="final-score" id="finalScore"></div>
+                <div class="final-message" id="finalMessage"></div>
+
+                <div class="final-cta">
+                    <div class="final-cta-label">📖 ĐỌC THÊM</div>
+                    <div class="final-cta-title">
+                        "Stress trong học đường - Liệu bạn có đang quan tâm đến bản thân đúng cách hay chưa?"
+                    </div>
+                    <a href="https://sites.google.com/view/genz-insight/xu-h%C6%B0%E1%BB%9Bng/stress-trong-h%E1%BB%8Dc-%C4%91%C6%B0%E1%BB%9Dng-li%E1%BB%87u-b%E1%BA%A1n-%C4%91%C3%A3-quan-t%C3%A2m-%C4%91%E1%BA%BFn-b%E1%BA%A3n-th%C3%A2n-%C4%91%C3%BAng-c%C3%A1ch-ch%C6%B0a" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="article-link">
+                        <span>Đọc bài phân tích chuyên sâu</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <br>
+                    <button class="restart-btn" onclick="restartStory()">🔄 Trải nghiệm lại từ đầu</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>📚 Nguồn dữ liệu: stress.org | PMC | Springer | Semantic Scholar | APA 2024 | Singh et al. 2025 | Hu et al. 2025</p>
+        <p style="margin-top: 10px;">Infographic được tạo nhằm nâng cao nhận thức về stress học đường</p>
+        <p style="margin-top: 10px; color: var(--primary-orange);">❤️ Hãy quan tâm đến sức khỏe tâm thần của bạn!</p>
+        <p style="margin-top: 16px; font-size: 0.8rem; letter-spacing: 0.5px; opacity: 0.75;">BẢN QUYỀN ©2023, GenZ Insight. BẢO LƯU MỌI QUYỀN.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
