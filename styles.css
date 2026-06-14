@@ -1545,3 +1545,19 @@ footer a {
                  0 0 20px rgba(243, 156, 18, 0.3),
                  0 0 30px rgba(243, 156, 18, 0.1);
 }
+
+/* Web Icon Fixed */
+.web-icon {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 90px;
+    height: 65px;
+    object-fit: contain;
+    cursor: pointer;
+    z-index: 998;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+}
