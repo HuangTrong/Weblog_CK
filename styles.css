@@ -1558,6 +1558,7 @@ footer a {
     z-index: 998;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease;
     user-select: none;
+    opacity: 1;
 }

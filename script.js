@@ -151,6 +151,20 @@ function updateProgressBar() {
         progressBar.style.width = progress + '%';
         lastProgress = progress;
     }
+    
+    // Fade web icon based on scroll
+    const webIcon = document.querySelector('.web-icon');
+    if (webIcon) {
+        const fadeStart = 300; // Start fading after scrolling 300px
+        const fadeEnd = 800;   // Minimally faded at 800px
+        const scrolled = window.scrollY;
+        let opacity = 1;
+        
+        if (scrolled > fadeStart) {
+            opacity = Math.max(0.2, 1 - (scrolled - fadeStart) / (fadeEnd - fadeStart));
+        }
+        webIcon.style.opacity = opacity;
+    }
     scrollPending = false;
 }
 
